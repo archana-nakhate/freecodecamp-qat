@@ -10,7 +10,7 @@ suite('Functional Tests', function () {
   this.timeout(5000);
   suite('Integration tests with chai-http', function () {
     // #1
-    test.only('Test GET /hello with no name', function (done) {
+    test('Test GET /hello with no name', function (done) {
       chai
         .request(server)
         .keepOpen()
@@ -22,7 +22,7 @@ suite('Functional Tests', function () {
         });
     });
     // #2
-    test.only('Test GET /hello with your name', function (done) {
+    test('Test GET /hello with your name', function (done) {
       chai
         .request(server)
         .keepOpen()
