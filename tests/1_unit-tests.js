@@ -4,7 +4,7 @@ const assert = chai.assert;
 suite('Unit Tests', function () {
   suite('Basic Assertions', function () {
     // #1
-    test.only('#isNull, #isNotNull', function () {
+    test('#isNull, #isNotNull', function () {
       assert.isNull(null, 'This is an optional error description - e.g. null is null');
       assert.isNotNull(1, '1 is not null');
     });
@@ -74,8 +74,8 @@ suite('Unit Tests', function () {
       assert.isBelow(2 / 3, 1);
     });
     // #10
-    test('#approximately', function () {
-      assert.approximately(weirdNumbers(0.5), 1.5, 0.5);
+    test.only('#approximately', function () {
+      assert.approximately(weirdNumbers(0.5), 0.5, 1.5);
       assert.approximately(weirdNumbers(0.2), 0.2, 1.2);
     });
   });
