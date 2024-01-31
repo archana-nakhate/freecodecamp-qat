@@ -10,26 +10,26 @@ suite('Functional Tests', function () {
   this.timeout(5000);
   suite('Integration tests with chai-http', function () {
     // #1
-    test('Test GET /hello with no name', function (done) {
+    test.only('Test GET /hello with no name', function (done) {
       chai
         .request(server)
         .keepOpen()
         .get('/hello')
         .end(function (err, res) {
-          assert.fail(res.status, 200);
-          assert.fail(res.text, 'hello Guest');
+          assert.equal(res.status, 200);
+          assert.equal(res.text, 'hello Guest');
           done();
         });
     });
     // #2
-    test('Test GET /hello with your name', function (done) {
+    test.only('Test GET /hello with your name', function (done) {
       chai
         .request(server)
         .keepOpen()
         .get('/hello?name=xy_z')
         .end(function (err, res) {
-          assert.fail(res.status, 200);
-          assert.fail(res.text, 'hello xy_z');
+          assert.equal(res.status, 200);
+          assert.equal(res.text, 'hello xy_z');
           done();
         });
     });
